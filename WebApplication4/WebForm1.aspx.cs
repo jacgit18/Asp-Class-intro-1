@@ -15,19 +15,33 @@ namespace WebApplication4
         {
             if (TextBox1.Text == TextBox2.Text)
             {
-                txtMessage.Text = "Success";
+                // TextBox3.Text = "Success";
+                String Uname;
+                Uname = TextBox1.Text;
+                // creating session object
+                Session["username"] = Uname;
+                Response.Redirect("Greetings.aspx?username= ");
             }
             else
             {
-                txtMessage.Text = "Failure";
-                Numfailures =int.Parse( txtNumfail.Value);
+                TextBox3.Text = "Failure";
+                //Numfailures =int.Parse( txtNumfail.Value);
+                Numfailures = int.Parse(Session["failures"].ToString());
                 Numfailures++;
-                txtNumfail.Value = Numfailures.ToString();
+                Session["failures"] = Numfailures.ToString();
                 if (Numfailures > 3)
                 {
-                    txtMessage.Text = "Blocked";
+                    TextBox3.Text = "Blocked";
                 }
                         
+            }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                ViewState["failures"] = 0;
             }
         }
     }

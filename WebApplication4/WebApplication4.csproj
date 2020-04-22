@@ -79,11 +79,43 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Greetings.aspx" />
+    <Content Include="Itinerary.aspx" />
+    <Content Include="SelectDestintion.aspx" />
+    <Content Include="SelectSource.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Greetings.aspx.cs">
+      <DependentUpon>Greetings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Greetings.aspx.designer.cs">
+      <DependentUpon>Greetings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Itinerary.aspx.cs">
+      <DependentUpon>Itinerary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Itinerary.aspx.designer.cs">
+      <DependentUpon>Itinerary.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectDestintion.aspx.cs">
+      <DependentUpon>SelectDestintion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectDestintion.aspx.designer.cs">
+      <DependentUpon>SelectDestintion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectSource.aspx.cs">
+      <DependentUpon>SelectSource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectSource.aspx.designer.cs">
+      <DependentUpon>SelectSource.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
