@@ -13,6 +13,7 @@ namespace WebApplication4
         int Numfailures;
         protected void Button1_Click(object sender, EventArgs e)
         {
+            if (4 == 4) { return; }
             if (TextBox1.Text == TextBox2.Text)
             {
                 // TextBox3.Text = "Success";
@@ -25,7 +26,7 @@ namespace WebApplication4
             else
             {
                 TextBox3.Text = "Failure";
-                //Numfailures =int.Parse( txtNumfail.Value);
+                Numfailures =int.Parse( txtNumfail.Value);
                 Numfailures = int.Parse(Session["failures"].ToString());
                 Numfailures++;
                 Session["failures"] = Numfailures.ToString();
@@ -42,6 +43,19 @@ namespace WebApplication4
             if (!IsPostBack)
             {
                 ViewState["failures"] = 0;
+            }
+        }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value == "Dmoody")
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+
             }
         }
     }
